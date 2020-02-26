@@ -1,4 +1,5 @@
 # search_app/setting_bulk.py
+# 별도로 해당 파일을 명령 프롬프트 창에서 실행시켜야 함(주의, 가상환경 설정 후에 실행할 것)
 
 from elasticsearch import Elasticsearch
 import json
@@ -37,10 +38,11 @@ es.indices.create(
                 }
             }
         }
-    }
+    },
+    ignore = 400
 )
 
-with open('C:\\ai\\workspace\\testsite\\dictionary_data.json', encoding='utf-8') as json_file:
+with open('C:\\ai\\workspace\\django\\testsite\\dictionary_data.json', encoding='utf-8') as json_file:
     json_data = json.loads(json_file.read())
 
 body = ""

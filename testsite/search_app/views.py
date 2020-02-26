@@ -15,11 +15,12 @@ class SearchView(APIView):
 
         # 검색어
         search_word = request.query_params.get('search')
+
         if not search_word:
             return Response(status=status.HTTP_400_BAD_REQUEST, data={'message': 'search word param is missing'})
 
         docs = es.search(index='dictionary', doc_type='dictionary_datas', body={"query": {"multi_match": {"query": search_word, "fields": ["title", "content"]}}})
-        print("docs")
+        
         data_list = docs['hits']
-        print(data_list)
+        
         return Response(data_list)
