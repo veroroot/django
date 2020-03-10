@@ -9,7 +9,6 @@
 2. pollsite
    - 질문에 따라 투표 기능이 있는 웹페이지를 구현한다.
    - 참고 사이트 : https://docs.djangoproject.com/ko/3.0/
-
 3. django-polls
    - pollsite의 polls 앱 기능을 배포
 
